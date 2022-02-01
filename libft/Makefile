@@ -83,7 +83,7 @@ clean:
 
 fclean: clean
 	@ $(RM) library/$(NAME)
-	@ echo ${COLOR}"CLEAN DONE"${NC}
+	@ echo ${COLOR}"Libft Library and objs CLEAN DONE"${NC}
 
 re: fclean all
 

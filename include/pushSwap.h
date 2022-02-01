@@ -7,6 +7,7 @@
 # include "../libft/include/libft.h"
 
 
+int handle(int ac, char **av, t_list **lst);
 
 
 #endif

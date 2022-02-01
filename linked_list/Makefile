@@ -43,7 +43,7 @@ clean:
 
 fclean: clean
 	@ $(RM) library/$(NAME)
-	@ echo ${COLOR}"CLEAN DONE"${NC}
+	@ echo ${COLOR}"Linked_List library and obj CLEAN DONE"${NC}
 
 re: fclean all
 

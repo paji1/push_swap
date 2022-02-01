@@ -1,6 +1,6 @@
 CC        := cc
 CFLAGS    := -Wall -Wextra -Werror
-SRC = src/main.c
+SRC = src/main.c src/parse.c 
 B ?= 2 1 3 6 5 8
 LIBRARY = libft/library/libft.a linked_list/library/liblink.a 
 
