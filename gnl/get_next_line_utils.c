@@ -6,11 +6,11 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 08:15:43 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/01/09 23:56:59 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/02/02 14:04:46 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
 char	*ft_sstrjoin(char *s1, char *s2)
 {

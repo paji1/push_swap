@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 11:40:18 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/01/21 07:28:34 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/02/02 13:46:55 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_itoa(int n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strcmp(const char *s1, const char *s2);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
