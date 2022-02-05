@@ -1,11 +1,12 @@
 CC        := cc
 CFLAGS    := -Wall -Wextra -Werror
-SRC = src/main.c src/parse.c  src/checker.c gnl/get_next_line.c gnl/get_next_line_utils.c
+SRC = src/main.c src/parse.c  src/checker.c gnl/get_next_line.c gnl/get_next_line_utils.c src/print_stack.c \
+	src/max_min.c
 B ?= 2 1 3 6 5 8
 LIBRARY = libft/library/libft.a linked_list/library/liblink.a 
 
 all: $(LIBRARY)
-	@ $(CC) $(CFLAGS)  $(SRC) -g $(LIBRARY)  -o push_swap
+	@ $(CC) $(CFLAGS) -g $(SRC)  $(LIBRARY)  -o push_swap
 	
 
 

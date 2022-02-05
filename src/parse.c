@@ -6,11 +6,12 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 11:44:07 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/02/02 19:08:11 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/02/05 00:59:26 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pushSwap.h"
+#define ARRAY_SIZE  536870912
 
 static void free_list(char **s,int i)
 {
@@ -30,12 +31,13 @@ static int is_spaces(char *s)
 	return 1;
 }
 
-static int is_in(int num)
+int is_in(unsigned int num)
 {
-	static int	tab[4294967295];
-	if(tab[(unsigned int)num] == -1)
+	int tab[9] = {1,2,4,8,16,32,64,128,256};
+	static unsigned char arr[ARRAY_SIZE];
+	if ((((arr[(num - num%8) / 8] >> num%8 ) & 1) == 1))
 		return 1;
-	tab[(unsigned int)num] = -1;
+	arr[(num - num%8) / 8] = arr[(num - num%8) / 8] | tab[num%8];	
 	return 0;
 }
 
@@ -58,8 +60,7 @@ int handle(int ac, char **av, t_list **lst)
 			if (is_in(i.num))
 				return (free_list(i.s,i.j), free(i.s), 0);
 			while (i.s[i.j][++i.t])
-				if (!ft_strchr("0123456789-+",i.s[i.j][i.t]) || \
-					(ft_strchr("-+",i.s[i.j][i.t]) && i.t))
+				if (!ft_strchr("0123456789-+",i.s[i.j][i.t]) || (ft_strchr("-+",i.s[i.j][i.t]) && i.t))
 					return (free_list(i.s,i.j), free(i.s), 0);
 			push(lst, ft_lstnew(i.num));
 			free(i.s[i.j]);

@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 13:09:21 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/02/02 19:04:40 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/02/02 20:46:42 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int ft_instr(char *s, t_list **lsta, t_list **lstb)
 }
 
 
-int main(int ac, char **av)
+int Hi(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
