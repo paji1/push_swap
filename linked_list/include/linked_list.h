@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 02:56:38 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/01/17 02:59:34 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/02/16 14:28:57 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 typedef struct s_list
 {
+	int 		size;
 	int				content;
 	struct s_list	*next;
 	struct s_list	*prev;
@@ -40,9 +41,14 @@ void	ft_pa(t_list **lsta, t_list **lstb);
 void	ft_pb(t_list **lsta, t_list **lstb);
 void	ft_free(t_list **lst);
 void	ft_ra(t_list **lst);
+void	ft_ra_rr(t_list **lst);
 void	ft_rb(t_list **lst);
+void	ft_rb_rr(t_list **lst);
 void	ft_rra(t_list **lst);
+void	ft_rra_rr(t_list **lst);
 void	ft_rrb(t_list **lst);
+void	ft_rrb_rr(t_list **lst);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
 void	ft_rr(t_list **stack_a, t_list **stack_b);
+int		ft_isin(t_list *lst,int content);
 #endif

@@ -6,13 +6,13 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:15:32 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/01/19 08:08:44 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/02/16 15:01:09 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "linked_list.h"
 
-void ft_rrb(t_list **lst)
+void ft_rrb_rr(t_list **lst)
 {
 	t_list *last;
 
@@ -21,7 +21,16 @@ void ft_rrb(t_list **lst)
 	last = (*lst)->prev;
 	(*lst)->prev = (*lst)->prev->prev;
 	push(lst, ft_lstnew(last->content));
+	(*lst)->size--;
 	(*lst)->prev = last->prev;
 	(*lst)->prev->next = NULL;
 	free(last);
+}
+
+void	ft_rrb(t_list **lst)
+{
+	if(!(*lst) || !((*lst)->next))
+		return ;
+	ft_rrb_rr(lst);
+	write(1,"rrb\n",4);
 }

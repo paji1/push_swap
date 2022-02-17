@@ -9,7 +9,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "/Users/tel-mouh/Desktop/push_swap/push_swap",
-			"args": [1,1,8,42,2],
+			"args": [12,111,212,214,21,1,22],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
 			"environment": [],

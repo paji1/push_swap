@@ -6,13 +6,14 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 02:35:14 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/01/19 08:08:16 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/02/16 09:09:17 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "linked_list.h"
 void	ft_rrr(t_list **stack_a, t_list **stack_b)
 {
-	ft_rra(stack_a);
-	ft_rrb(stack_b);
+	ft_rra_rr(stack_a);
+	ft_rrb_rr(stack_b);
+	write(1,"rrr\n",4);
 }
