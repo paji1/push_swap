@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 13:09:21 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/02/16 08:10:24 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/02/18 09:03:51 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,14 @@ int Hi(int ac, char **av)
 	stack_b = NULL;
 	s = "";
 	if(ac == 1)
-		return 0;
+		return 1;
 	if(!handle(ac,av,&stack_a))
 		return ft_free(&stack_a),ft_free(&stack_b),printf("error") , 1;
 	while (*s != '\n')
 	{
 		s = get_next_line(1);
+		if(!s)
+			return printf("error"),ft_free(&stack_a),ft_free(&stack_b),1;
 		if (ft_instr(s, &stack_a, &stack_b) && *s != '\n')
 			return printf("error"),free(s),ft_free(&stack_a),ft_free(&stack_b),1;
 		free(s);

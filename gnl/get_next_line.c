@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 08:13:37 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/01/09 23:56:52 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/02/18 09:00:12 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*readbuf(int fd, char *str)
 		str = "";
 	if (ft_getindex(str, '\n') != -1)
 		return (str);
-	while (ft_getindex(buff, '\n') == -1 && n)
+	while (ft_getindex(buff, '\n') == -1 && n && str)
 	{	
 		n = read(fd, buff, BUFFER_SIZE);
 		if (n == -1)

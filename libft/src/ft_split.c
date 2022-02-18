@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 04:09:40 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/01/21 07:31:02 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/02/17 19:01:17 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,8 @@ static	int	freetable(char **tab, char *s, int i)
 {
 	if (!s)
 	{
-		while (i)
-			free(tab[i--]);
-		free(tab[i]);
+		while (i > 0)
+			free(tab[--i]);
 		return (1);
 	}
 	return (0);
@@ -73,7 +72,7 @@ char	**ft_split(char const *s, char c)
 		{
 			tab[t] = ft_substr(s, i, nex(s, c, i));
 			if (freetable(tab, tab[t], t))
-				return (NULL);
+				return (free(tab), (NULL));
 			tab[t++][nex(s, c, i)] = 0;
 			i += nex(s, c, i);
 		}

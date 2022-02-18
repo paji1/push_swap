@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 11:44:07 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/02/05 15:48:02 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/02/17 18:34:52 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int handle(int ac, char **av, t_list **lst)
 	while (--ac > 0)
 	{
 		i.s = ft_split(av[ac],' ');
+		if(!(i.s))
+			return (0);
 		i.j = countwords(av[ac],' ');
 		if (is_spaces(av[ac]))
 				return (free_list(i.s,i.j), free(i.s), 0);
