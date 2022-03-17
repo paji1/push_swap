@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 18:11:53 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/02/17 18:35:43 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/03/17 09:29:08 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,39 +24,22 @@
 // 		temp = temp->next;
 // 	}
 // }
-// void smart_rotate(t_list **stack_a,int condition,t_list *elem)
-// {
-// 	void (*rotate)(t_list **);
 
-// 	if (condition)
-// 		rotate = &ft_ra;
-// 	else
-// 		rotate = &ft_rra;
-// 	while((*stack_a)->content != elem->content)
-// 	{
-// 		rotate(stack_a);
-// 	}
-// }
 
-// void min_in_top(t_list **stack_a)
-// {
-
-// 	t_MIN min = find_MIN(*stack_a);
-// 	smart_rotate(stack_a,min.index <= ((*stack_a)->size - 1)/ 2,min.lst);
-// }
 
 
 int main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	int		lis_size;
 	// t_hash *hash;
 	// t_hash *sorted_hash;
 
 	
-	
 	stack_a = NULL;
 	stack_b = NULL;
+	lis_size = 0;
 	if(ac <= 1)
 		return 0;
 	if(!handle(ac,av,&stack_a))
@@ -64,12 +47,16 @@ int main(int ac, char **av)
 	// inis_hash(&hash,stack_a);
 	// sort_hash(&sorted_hash,stack_a,stack_a->size);
 	// set_index(&stack_a,sorted_hash);
-	// min_in_top(&stack_a);
+	min_in_top(&stack_a);
+
+	int i = -1;
+	t_tab *ss = len_LIS(to_table(stack_a));
+	lis_size = ss->is[0];
+	int *tab = Lis_elem(ss);
+	// printf("%d ", stack_a->size);
+	print_stack(stack_a,stack_b);
 	
-	// ft_pb(&stack_a,&stack_b);
-	// printf("sa = %d  \n", stack_a->size);
-	// print_stack(stack_a,stack_b);
 	
+	free(tab);
 	return (ft_free(&stack_a),0);
-	
 }
