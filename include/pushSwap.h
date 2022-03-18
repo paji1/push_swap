@@ -52,9 +52,10 @@ void	smart_rotate(t_list **stack_a,int condition,int i);
 void	min_in_top(t_list **stack_a);
 void	print_stack(t_list *lst, t_list *lstb);
 t_tab	*len_LIS(t_tab *ss);
+void	push_nlis(t_list **stack_a, t_list **stack_b, int size_a);
 int		*Lis_elem(t_tab *ss);
 t_hash	*ft_new_hash(int content,int t);
-t_tab	*to_table(t_list *stack);
+t_tab	*to_table(t_list *stack,int size);
 t_MIN	find_MIN(t_list *lst);
 t_MAX	find_MAX(t_list *lst);
 #endif

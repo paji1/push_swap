@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 23:52:19 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/03/18 01:16:35 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/03/18 03:22:13 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 
 
-t_tab	*to_table(t_list *stackk)
+t_tab	*to_table(t_list *stackk, int size)
 {
 	t_tab *ss;
 	t_list *stack;
@@ -25,10 +25,10 @@ t_tab	*to_table(t_list *stackk)
 	if (!stack || !ss)
 		return (NULL);
 	ss->i = 0;
-	ss->tab = (int *)malloc(sizeof(int) * stack->size);
+	ss->tab = (int *)malloc(sizeof(int) * size);
 	if (!ss->tab)
 		return (NULL);
-	ss->is = (int *)malloc(sizeof(int) * stack->size);
+	ss->is = (int *)malloc(sizeof(int) * size);
 	if (!(ss->is))
 		return NULL;
 	while (stack)
@@ -39,8 +39,6 @@ t_tab	*to_table(t_list *stackk)
 	}
 	return ss;
 }
-
-
 
 t_tab *len_LIS(t_tab *ss)
 {	
@@ -88,4 +86,29 @@ int *Lis_elem(t_tab *ss)
 		i++;
 	}
 	return (free(ss->tab), free(ss->is),free(ss), n_tab);
+}
+
+void push_nlis(t_list **stack_a, t_list **stack_b, int size_a)
+{
+	min_in_top(stack_a);
+	int		lis_size;
+	t_tab	*ss;
+	int		*tab;
+	int		t;
+	
+	ss = len_LIS(to_table((*stack_a), size_a));
+	lis_size = ss->is[0];
+	tab = Lis_elem(ss);
+	t = 0;
+	while (t < lis_size || (*stack_a)->content != tab[0])
+	{
+		if ((*stack_a)->content != tab[t])
+			ft_pb(stack_a,stack_b);
+		else
+		{
+			ft_ra(stack_a);
+			t++;
+		}
+	}
+	free(tab);
 }
