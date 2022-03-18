@@ -6,12 +6,12 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 11:44:07 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/02/17 18:34:52 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/03/17 12:52:46 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pushSwap.h"
-#define ARRAY_SIZE  536870912
+#define ARRAY_SIZE  500
 
 static void free_list(char **s,int i)
 {

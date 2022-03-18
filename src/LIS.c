@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 23:52:19 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/03/17 09:24:16 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/03/18 01:16:35 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,16 @@ t_tab	*to_table(t_list *stackk)
 	
 
 	stack = stackk;
-	ss = malloc(sizeof(t_tab *));
+	ss = malloc(sizeof(t_tab));
 	if (!stack || !ss)
 		return (NULL);
 	ss->i = 0;
-	ss->tab = (int *)malloc(4 * stack->size);
-	ss->is = (int *)malloc(4 * stack->size);
+	ss->tab = (int *)malloc(sizeof(int) * stack->size);
 	if (!ss->tab)
-		return (ss);
+		return (NULL);
+	ss->is = (int *)malloc(sizeof(int) * stack->size);
+	if (!(ss->is))
+		return NULL;
 	while (stack)
 	{
 		ss->is[(ss->i)] = 1;
