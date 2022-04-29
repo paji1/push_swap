@@ -6,13 +6,11 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 23:52:19 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/03/18 03:22:13 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/04/17 12:12:39 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pushSwap.h"
-
-
 
 t_tab	*to_table(t_list *stackk, int size)
 {
@@ -40,7 +38,7 @@ t_tab	*to_table(t_list *stackk, int size)
 	return ss;
 }
 
-t_tab *len_LIS(t_tab *ss)
+t_tab	*len_LIS(t_tab *ss)
 {	
 	int i;
 	int j;
@@ -70,8 +68,8 @@ int *Lis_elem(t_tab *ss)
 	int count;
 
 	i = 1;
-	big = ss->is[0]-1;
-	n_tab = malloc(sizeof(int) * big);
+	big = ss->is[0]- 1 ;
+	n_tab = malloc(sizeof(int) * (big + 1));
 	temp = 0;
 	n_tab[0] = ss->tab[0];
 	count = 1;
@@ -88,27 +86,25 @@ int *Lis_elem(t_tab *ss)
 	return (free(ss->tab), free(ss->is),free(ss), n_tab);
 }
 
-void push_nlis(t_list **stack_a, t_list **stack_b, int size_a)
+int	push_nlis(t_list **stack_a, t_list **stack_b, int size_a)
 {
-	min_in_top(stack_a);
 	int		lis_size;
 	t_tab	*ss;
 	int		*tab;
 	int		t;
 	
+	t = min_in_top(stack_a);
 	ss = len_LIS(to_table((*stack_a), size_a));
 	lis_size = ss->is[0];
 	tab = Lis_elem(ss);
-	t = 0;
-	while (t < lis_size || (*stack_a)->content != tab[0])
+	min_toposition(stack_a,t);
+	t = -1;
+	while (++t < size_a)
 	{
-		if ((*stack_a)->content != tab[t])
+		if (!ft_in_table(tab, (*stack_a)->content,lis_size))
 			ft_pb(stack_a,stack_b);
 		else
-		{
 			ft_ra(stack_a);
-			t++;
-		}
 	}
-	free(tab);
+	return  free(tab),lis_size;
 }

@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 18:11:53 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/03/18 03:24:02 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/04/27 15:08:36 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ int main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	int		size_a;
-	// t_hash *hash;
-	// t_hash *sorted_hash;
+
 
 	
 	stack_a = NULL;
@@ -43,13 +41,11 @@ int main(int ac, char **av)
 		return 0;
 	if(!handle(ac,av,&stack_a))
 		return printf("error"), ft_free(&stack_a), ft_free(&stack_b), 1;
-	size_a = stack_a->size;
-	push_nlis(&stack_a,&stack_b,size_a);
-	// inis_hash(&hash,stack_a);
-	// sort_hash(&sorted_hash,stack_a,stack_a->size);
-	// set_index(&stack_a,sorted_hash);
-	
-	// print_stack(stack_a,stack_b);
+	push_nlis(&stack_a,&stack_b,stack_a->size);
+
+	print_stack(stack_a,stack_b);
+	printf("\npos_a -> %d\n", find_position(234,stack_b));
 	// free(tab);
+	printf("%d ",stack_b->size);
 	return (ft_free(&stack_a),ft_free(&stack_b),0);
 }

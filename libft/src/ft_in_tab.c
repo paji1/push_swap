@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ra.c                                            :+:      :+:    :+:   */
+/*   ft_in_tab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/16 05:14:43 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/04/17 12:20:42 by tel-mouh         ###   ########.fr       */
+/*   Created: 2022/04/16 11:08:55 by tel-mouh          #+#    #+#             */
+/*   Updated: 2022/04/16 11:22:06 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "linked_list.h"
-
-void ft_ra_rr(t_list **lst)
+int ft_in_table(int *tab, int needle,int len)
 {
-	t_list *temp;
+	int i;
 
-	if (!*lst)
-		return ;
-	if(!((*lst)->next))
-		return ;
-	temp = NULL;
-	temp = pop(lst);
-	(*lst)->size = temp->size;
-	ft_lstadd_back(lst, ft_lstnew(temp->content));
-	free(temp);
-}
-void ft_ra(t_list **lst)
-{
-	if (!*lst)
-		return ;
-	if(!((*lst)->next))
-		return ;
-	ft_ra_rr(lst);
-	write(1,"ra\n",3);
+	i = 0;
+	while (i < len)
+		if (tab[i++] == needle)
+			return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 11:40:18 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/02/02 13:46:55 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/04/17 08:21:51 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 int		countwords(const char *s, char c);
+int		ft_in_table(int *tab, int needle,int len);
+int		ft_abs(int num);
 
 
 #endif
