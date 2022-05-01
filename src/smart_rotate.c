@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 23:47:38 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/05/01 22:52:38 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/01 23:44:13 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,17 @@ int search_bt(t_list **stack, int *nlist, int len)
 	t_list *head;
 
 	i = -1;
-	(*stack)->size;
+	size = (*stack)->size;
 	head = *stack;
 	last = (*stack)->prev; 
 	while(++i < size / 2)
 	{
 		if (!ft_in_table(nlist,head->content,len))
-			return ft_ra(stack), 1;
+			return smart_rotate(stack,1,head->content), 1;
 		else if (!ft_in_table(nlist,last->content,len))
-			return ft_rra(stack), 1;
+			return smart_rotate(stack,0,last->content), 1;
 		head = head->next;
 		last = last->prev;
 	}
-	return 1;
+	return 0;
 }

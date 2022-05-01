@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 18:11:53 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/05/01 22:57:35 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/01 23:41:31 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int main(int ac, char **av)
 		return printf("error"), ft_free(&stack_a), ft_free(&stack_b), 1;
 	push_nlis(&stack_a,&stack_b,stack_a->size);
 
-	print_stack(stack_a,stack_b);
-	printf("\npos_a -> %d\n", find_position(234,stack_b));
+	// print_stack(stack_a,stack_b);
+	// printf("\npos_a -> %d\n", find_position(234,stack_b));
 	// free(tab);
-	printf("%d ",stack_a->size);
+	// printf("%d ",stack_a->size);
 	return (ft_free(&stack_a),ft_free(&stack_b),0);
 }
