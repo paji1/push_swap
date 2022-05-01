@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 18:11:53 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/04/27 15:08:36 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/01 22:57:35 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ int main(int ac, char **av)
 	print_stack(stack_a,stack_b);
 	printf("\npos_a -> %d\n", find_position(234,stack_b));
 	// free(tab);
-	printf("%d ",stack_b->size);
+	printf("%d ",stack_a->size);
 	return (ft_free(&stack_a),ft_free(&stack_b),0);
 }

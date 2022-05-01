@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   smart_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 23:47:38 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/04/16 11:02:20 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/01 22:52:38 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,27 @@ void min_toposition(t_list **stack_a,int cr)
 		ft_rra_rr(stack_a);
 	while(++count < 0 && cr < 0)
 		ft_ra_rr(stack_a);
+}
+
+int search_bt(t_list **stack, int *nlist, int len)
+{
+	int i;
+	int size;
+	t_list *last;
+	t_list *head;
+
+	i = -1;
+	(*stack)->size;
+	head = *stack;
+	last = (*stack)->prev; 
+	while(++i < size / 2)
+	{
+		if (!ft_in_table(nlist,head->content,len))
+			return ft_ra(stack), 1;
+		else if (!ft_in_table(nlist,last->content,len))
+			return ft_rra(stack), 1;
+		head = head->next;
+		last = last->prev;
+	}
+	return 1;
 }
