@@ -21,12 +21,14 @@ typedef struct s_MAX
 {
 	int		index;
 	t_list	*lst;
+	int num;
 }t_MAX;
 
 typedef struct s_MIN
 {
 	int		index;
 	t_list	*lst;
+	int num;
 }t_MIN;
 
 typedef struct s_hash
@@ -60,4 +62,16 @@ t_tab	*to_table(t_list *stack,int size);
 t_MIN	find_MIN(t_list *lst);
 t_MAX	find_MAX(t_list *lst);
 int		find_position(int element, t_list *stack);
+int		is_bettwen(int first, int num, int second);
+int		i_MM(int min ,int max, int first, int second);
+int		get_a(t_list *stack, int content);
+int		calculemoves(int *tmp);
+void	best_move(int *tmp, int *best);
+int		*push_back(t_list *stack_a,t_list *stack_b);
+int		min_in_top_pr(t_list **stack_a);
+int		smart_rotate_pr(t_list **stack_a,int condition,int i);
+void	is_rbrrb(int *tmp,t_list **stack_b);
+void	is_rarra(int *tmp,t_list **stack_a);
+void	is_rrr(int *tmp,t_list **stack_b, t_list **stack_a);
+void	is_rr(int *tmp,t_list **stack_b, t_list **stack_a);
 #endif

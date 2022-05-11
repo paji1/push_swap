@@ -2,6 +2,7 @@
 	"files.associations": {
 		"pushswap.h": "c",
 		"stdio.h": "c",
-		"linked_list.h": "c"
+		"linked_list.h": "c",
+		"libft.h": "c"
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 23:47:38 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/05/01 23:44:13 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/08 08:28:57 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,27 @@ int smart_rotate(t_list **stack_a,int condition,int i)
 	}
 	return (count);
 }
+int smart_rotate_sh(t_list **stack_a,int condition,int i)
+{
+	void	(*rotate)(t_list **);
+	int		count;
+
+	count = 0;
+	if (condition)
+		rotate = &ft_ra;
+	else
+		rotate = &ft_rra;
+	while((*stack_a)->content != i)
+	{
+		if(condition)
+			count++;
+		else
+			count--;
+		rotate(stack_a);
+	}
+	return (count);
+}
+
 
 int min_in_top(t_list **stack_a)
 {
@@ -68,12 +89,12 @@ int search_bt(t_list **stack, int *nlist, int len)
 	size = (*stack)->size;
 	head = *stack;
 	last = (*stack)->prev; 
-	while(++i < size / 2)
+	while(++i <= size / 2)
 	{
 		if (!ft_in_table(nlist,head->content,len))
-			return smart_rotate(stack,1,head->content), 1;
+			return smart_rotate_sh(stack,1,head->content), 1;
 		else if (!ft_in_table(nlist,last->content,len))
-			return smart_rotate(stack,0,last->content), 1;
+			return smart_rotate_sh(stack,0,last->content), 1;
 		head = head->next;
 		last = last->prev;
 	}

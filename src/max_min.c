@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   max_min.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 02:16:16 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/02/06 22:41:51 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/09 23:53:15 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,13 @@ t_MAX find_MAX(t_list *lst)
 	
 	max.index = 0;
 	max.lst = lst;
+	max.num = lst->content;
 	while (lst)
 	{
 		if(lst->content > max.lst->content)
 		{
 			max.lst = lst;
+			max.num = lst->content;
 			max.index = i;
 		}
 		i++;
@@ -44,11 +46,13 @@ t_MIN	find_MIN(t_list *lst)
 		return min.lst = NULL, min.index = 0,(min);
 	min.index = 0;
 	min.lst = lst;
+	min.num = lst->content;
 	while (lst)
 	{
 		if(lst->content <= min.lst->content)
 		{
 			min.lst = lst;
+			min.num = lst->content;
 			min.index = i;
 		}
 		i++;

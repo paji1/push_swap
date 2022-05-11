@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 23:52:19 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/05/01 23:32:09 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/08 08:45:19 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,22 +92,21 @@ int	push_nlis(t_list **stack_a, t_list **stack_b, int size_a)
 	t_tab	*ss;
 	int		*tab;
 	int		t;
-	int		l;
+	int		i;
 	
 	t = min_in_top(stack_a);
 	ss = len_LIS(to_table((*stack_a), size_a));
 	lis_size = ss->is[0];
 	tab = Lis_elem(ss);
 	min_toposition(stack_a,t);
+	i = 0;
 	t = -1;
-	l = 1;
-	while (l)
+	while (++t < size_a && i < size_a - lis_size)
 	{
-		l = search_bt(stack_a, tab, lis_size);
-		if (l)
-			ft_pb(stack_a,stack_b);
+		if (!ft_in_table(tab, (*stack_a)->content,lis_size))
+			i++ , ft_pb(stack_a,stack_b);
 		else
-			break;
+			ft_ra(stack_a);
 	}
 	return  free(tab),lis_size;
 }
