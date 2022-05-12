@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 05:19:43 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/05/11 02:44:27 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/12 02:54:04 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int	*push_back(t_list *stack_a,t_list *stack_b)
 	head_b = stack_b;
 	bot_b = stack_b->prev;
 	best[0] = 0;
+	
 	while (head_b && ++i <= size)
 	{
 		tmp[1] = get_a(stack_a,head_b->content);
@@ -74,10 +75,9 @@ int	*push_back(t_list *stack_a,t_list *stack_b)
 	while(bot_b->content != stack_b->content && -j <= size / 2)
 	{
 		tmp[1] = get_a(stack_a,bot_b->content);
-		tmp[0] = j;
+		tmp[0] = j--;
 		best_move(tmp, best);
 		bot_b = bot_b->prev;
-		j--;
 	}
 	return best;
 }
@@ -106,6 +106,19 @@ int i_MM(int min ,int max, int first, int second)
 	}
 	return 0;
 }
+typedef struct s_head_tail 
+{
+	t_list *head;
+	t_list *tail;
+}t_head_tail;
+
+typedef struct MIN_MAX 
+{
+	t_MIN min;
+	t_MAX max;
+}t_MIN_MAX;
+
+
 int	get_a(t_list *stack, int content)
 {
 	int i;
@@ -114,6 +127,8 @@ int	get_a(t_list *stack, int content)
 	int size;
 	t_list *stack_a;
 	t_list *last;
+	t_MAX max; 
+	t_MIN min; 
 	
 	i = 0;
 	j = -1;
@@ -121,8 +136,6 @@ int	get_a(t_list *stack, int content)
 	stack_a = stack;
 	last = stack->prev;
 	size = stack_a->size;
-	t_MAX max; 
-	t_MIN min; 
 	
 	max = find_MAX(stack_a);
 	min = find_MIN(stack_a);
@@ -131,8 +144,7 @@ int	get_a(t_list *stack, int content)
 	if(is_bettwen(stack_a->content, content, stack_a->prev->content))
 		if (!i_MM(min.num, max.num, stack_a->content, stack_a->prev->content))
 			return 0;
-	// printf("%d , %d max = %d\n",stack_a->content,stack_a->next->content, min.lst->content);
-	while(stack_a && i <= size / 2)
+	while(stack_a->next && i <= size / 2)
 	{
 		if (i_MM(min.num, max.num, stack_a->content, stack_a->next->content))
 		{
@@ -159,10 +171,7 @@ int	get_a(t_list *stack, int content)
 			continue;
 		}
 		if(is_bettwen(last->content, content, last->prev->content))
-		{
-				// j--;
 				break;
-		}
 		j--;
 		last = last->prev;
 	}
