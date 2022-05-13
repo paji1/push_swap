@@ -16,6 +16,12 @@ typedef struct inis
 # include "../linked_list/include/linked_list.h"
 # include "../libft/include/libft.h"
 # include <stdio.h>
+typedef struct s_head_tail 
+{
+	t_list *head;
+	t_list *tail;
+}t_head_tail;
+
 
 typedef struct s_MAX
 {
@@ -30,6 +36,11 @@ typedef struct s_MIN
 	t_list	*lst;
 	int num;
 }t_MIN;
+typedef struct MIN_MAX 
+{
+	t_MIN min;
+	t_MAX max;
+}t_MIN_MAX;
 
 typedef struct s_hash
 {
@@ -74,4 +85,8 @@ void	is_rbrrb(int *tmp,t_list **stack_b);
 void	is_rarra(int *tmp,t_list **stack_a);
 void	is_rrr(int *tmp,t_list **stack_b, t_list **stack_a);
 void	is_rr(int *tmp,t_list **stack_b, t_list **stack_a);
+int		lood_a_front(t_list *stack_a, int *i, int content,t_MIN_MAX mn);
+int		lood_a_back(t_list *stack_a, int *t, int content,t_MIN_MAX mn);
+void	loop_back(int *tmp, int *best, t_list *stack_a, t_list *stack_b);
+void	loop_front(int *tmp, int *best, t_list *stack_a, t_list *stack_b);
 #endif

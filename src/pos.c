@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pos.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 06:26:24 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/04/17 12:26:25 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/12 04:32:02 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,3 @@ int find_position(int element, t_list *stack)
 	return (i + 1);
 }
 
-// int calcul_moves(t_pos pos)
-// {
-	
-// }

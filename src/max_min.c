@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 02:16:16 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/05/09 23:53:15 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/13 05:29:22 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,20 @@ t_MIN	find_MIN(t_list *lst)
 		lst = lst->next;
 	}
 	return min;
+}
+
+int i_MM(int min ,int max, int first, int second)
+{
+	// is bettwen max and min
+	if (first == min)
+	{
+		if (second == max)
+			return 1;
+	}
+	else if (first == max)
+	{
+		if (second == min)
+			return 1;
+	}
+	return 0;
 }
