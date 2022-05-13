@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   back_to.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 05:19:43 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/05/13 05:36:34 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/13 06:23:44 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	calculemoves(int *tmp)
 	else
 	{
 		if (tmp[0] < tmp[1])
-			moves = tmp[1] - tmp[0]; 
+			moves = tmp[1] - tmp[0];
 		else
 			moves = tmp[0] - tmp[1];
 	}
@@ -47,23 +47,23 @@ void	best_move(int *tmp, int *best)
 		ft_memcpy(best, tmp, 8);
 }
 
-int	*push_back(t_list *stack_a,t_list *stack_b)
+int	*push_back(t_list *stack_a, t_list *stack_b)
 {
 	int	*best;
 	int	tmp[2];
 
-	best = (int *)malloc(sizeof(int) * 4);	
-	loop_front(tmp, best, stack_a,stack_b);
-	loop_back(tmp, best, stack_a,stack_b);
+	best = (int *)malloc(sizeof(int) * 4);
+	loop_front(tmp, best, stack_a, stack_b);
+	loop_back(tmp, best, stack_a, stack_b);
 	return (best);
 }
 
-int is_bettwen(int first, int num, int second)
+int	is_bettwen(int first, int num, int second)
 {
-	if (first < num && num  < second)
+	if (first < num && num < second)
 		return (1);
 	else if (first > num && num > second)
-		return (1); 
+		return (1);
 	return (0);
 }
 
@@ -73,7 +73,7 @@ int	get_a(t_list *stack, int content)
 	int			j;
 	int			t;
 	t_MIN_MAX	mn;
-	
+
 	i = 0;
 	j = -1;
 	t = 0;
@@ -85,7 +85,7 @@ int	get_a(t_list *stack, int content)
 			return (0);
 	t = lood_a_front(stack, &i, content, mn);
 	j = lood_a_back(stack, &t, content, mn);
-	if (i > stack->size / 2 && -j > stack->size / 2)
+	if (i > stack->size / 2 && - j > stack->size / 2)
 		return (t);
 	if (i < -j)
 		return (i);

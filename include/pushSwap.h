@@ -56,11 +56,9 @@ typedef struct s_tab
 	int *is;
 } t_tab;
 
-int		find_key(int content, t_hash *lst);
-int		inis_hash(t_hash **lst,t_list *a);
+
+
 int 	handle(int ac, char **av, t_list **lst);
-void	add_hash(t_hash **lst,t_hash *new);
-void	sort_hash(t_hash **sorted_hash,t_list *stack_a,int len);
 int		smart_rotate(t_list **stack_a,int condition,int i);
 int		min_in_top(t_list **stack_a);
 void	min_toposition(t_list **stack_a,int count);
@@ -68,7 +66,6 @@ void	print_stack(t_list *lst, t_list *lstb);
 t_tab	*len_LIS(t_tab *ss);
 int		push_nlis(t_list **stack_a, t_list **stack_b, int size_a);
 int		*Lis_elem(t_tab *ss);
-t_hash	*ft_new_hash(int content,int t);
 t_tab	*to_table(t_list *stack,int size);
 t_MIN	find_MIN(t_list *lst);
 t_MAX	find_MAX(t_list *lst);
