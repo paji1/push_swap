@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   back_to.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 05:19:43 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/05/13 06:23:44 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/14 02:21:12 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,10 @@ int	get_a(t_list *stack, int content)
 	i = 0;
 	j = -1;
 	t = 0;
-	mn.max = find_MAX(stack);
-	mn.min = find_MIN(stack);
+	mn.max = find_max(stack);
+	mn.min = find_min(stack);
 	if (is_bettwen(stack->content, content, stack->prev->content))
-		if (!i_MM(mn.min.num, mn.max.num, stack->content, \
+		if (!i_mm(mn.min.num, mn.max.num, stack->content, \
 			stack->prev->content))
 			return (0);
 	t = lood_a_front(stack, &i, content, mn);

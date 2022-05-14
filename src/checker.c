@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 13:09:21 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/02/18 09:03:51 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/14 06:14:31 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,7 @@ int Hi(int ac, char **av)
 			return printf("Ko"),ft_free(&stack_a),ft_free(&stack_b),1;
 		stack_temp = stack_temp->next;
 	}
+	if(stack_b->size)
+		return printf("Ko"),ft_free(&stack_a),ft_free(&stack_b),1;
 	return printf("OK"),ft_free(&stack_a),ft_free(&stack_b),0;
 }
