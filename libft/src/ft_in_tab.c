@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_in_tab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 11:08:55 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/04/16 11:22:06 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/14 07:01:46 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_in_table(int *tab, int needle,int len)
+int	ft_in_table(int *tab, int needle, int len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < len)

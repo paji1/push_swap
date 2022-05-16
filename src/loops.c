@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 05:22:12 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/05/14 04:34:19 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/15 02:22:59 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ int	parse_loop(t_inis i, t_list **lst)
 	{
 		i.t = -1;
 		i.num = ft_atoi(i.s[i.j]);
+		if (ft_strcmp(ft_itoa(i.num), i.s[i.j]))
+			return (free_list(i.s, i.j), free(i.s), 1);
 		if (is_in(i.num))
 			return (free_list(i.s, i.j), free(i.s), 1);
 		while (i.s[i.j][++i.t])

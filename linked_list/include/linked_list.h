@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 02:56:38 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/05/01 22:53:05 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/14 05:31:42 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,4 @@ void	ft_rrb_rr(t_list **lst);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
 void	ft_rr(t_list **stack_a, t_list **stack_b);
 int		ft_isin(t_list *lst,int content);
-int		search_bt(t_list **stack, int *nlist, int len);
 #endif

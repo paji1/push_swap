@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sa.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 20:47:14 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/01/19 08:08:23 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/15 07:29:25 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ void ft_sa(t_list **lst)
 	temp1 = pop(lst);
 	push(lst,temp);
 	push(lst,temp1);
+	write(1,"sa\n",3);
 }

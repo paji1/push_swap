@@ -5,7 +5,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "/home/taha/Desktop/push_swap/push_swap",
-			"args": [-6,3,-2],
+			"args": [-6,"",-2],
 			"stopAtEntry": false,
 			"cwd": "${fileDirname}",
 			"environment": [],

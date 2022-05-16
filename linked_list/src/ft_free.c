@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/16 04:09:50 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/01/18 00:04:48 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/14 07:07:33 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "linked_list.h"
-#include <stdio.h>
+
 void ft_free(t_list **lst)
 {
 	t_list	*temp1;
