@@ -1,43 +1,3 @@
-# # *****************************************************************
-# CC        := cc
-# CFLAGS    := -Wall -Wextra -Werror
-
-# # *****************************************************************
-# RM    := rm -f
-# AR    := ar rcs
-# # *****************************************************************
-# HEADER := libft.h
-# # *****************************************************************
-# NAME    := libft.a
-# SRCS    := ft_calloc.c ft_isdigit.c ft_memchr.c ft_memset.c ft_putstr_fd.c ft_striteri.c ft_strlen.c ft_strrchr.c\
-# ft_toupper.c ft_isalnum.c ft_isprint.c ft_memcmp.c ft_putchar_fd.c ft_split.c ft_strjoin.c ft_strmapi.c ft_strtrim.c\
-# ft_atoi.c ft_isalpha.c ft_itoa.c ft_memcpy.c ft_putendl_fd.c ft_strchr.c ft_strlcat.c ft_strncmp.c ft_substr.c\
-# ft_bzero.c ft_isascii.c ft_memmove.c ft_putnbr_fd.c ft_strdup.c ft_strlcpy.c ft_strnstr.c ft_tolower.c
-
-# OBJS    := $(SRCS:.c=.o)
-# OBJS_bonus    := $(SRCS_bonus:.c=.o)
-
-# # *****************************************************************
-# all:    $(NAME)
-
-# $(NAME):	$(OBJS)  
-# 	$(AR) $(NAME) $(OBJS)
-
-
-
-# %.o: %.c
-# 	$(CC) $(CFLAGS) -o $@ -c $<
-
-# clean:
-# 	$(RM) $(OBJS) $(OBJS_bonus) $(OUTPUT)
-
-# fclean:	clean
-# 		$(RM) $(NAME)
-
-# re:	fclean all
-
-# .PHONY:	all clean fclean re
-
 # ###################COMMAND#############################
 CC=cc
 CFLAGS=-Wall -Wextra -Werror -g
@@ -46,8 +6,20 @@ AR    := ar rcs
 # ###################PATH#############################
 SRC_DIR = src
 INCLUDE_DIR = include
-
-SRCS = $(wildcard $(SRC_DIR)/*.c)
+SRC = ft_abs.c      ft_memcpy.c      ft_strlcat.c \
+	ft_atoi.c     ft_memmove.c     ft_strlcpy.c \
+	ft_bzero.c    ft_memset.c      ft_strlen.c \
+	ft_calloc.c   ft_putchar_fd.c  ft_strmapi.c \
+	ft_in_tab.c   ft_putendl_fd.c  ft_strncmp.c \
+	ft_isalnum.c  ft_putnbr_fd.c   ft_strnstr.c \
+	ft_isalpha.c  ft_putstr_fd.c   ft_strrchr.c \
+	ft_isascii.c  ft_split.c       ft_strtrim.c \
+	ft_isdigit.c  ft_strchr.c      ft_substr.c \
+	ft_isprint.c  ft_strcmp.c      ft_tolower.c \
+	ft_itoa.c     ft_strdup.c      ft_toupper.c \
+	ft_memchr.c   ft_striteri.c \
+	ft_memcmp.c   ft_strjoin.c 
+SRCS = $(addprefix src/, $(SRC))
 OBJS = $(SRCS:.c=.o)
 INCLUDES = $(wildcard $(INCLUDE_DIR)/*)
 OBJ_DIR = $(addprefix obj/, $(notdir $(OBJS)))
@@ -64,6 +36,7 @@ all: $(NAME)
 	
 
 obj/%.o: src/%.c $(INCLUDES)
+	@ printf $(COLOR)"#"$(NC)
 	@ $(CC) $(CFLAGS) -I $(INCLUDE_DIR) -c $< -o obj/$(notdir $@)
 	
 WAITING : 
@@ -71,7 +44,7 @@ WAITING :
 
 $(NAME): WAITING $(OBJ_DIR) $(INCLUDES) 
 	@ $(AR) library/$(NAME) $(OBJ_DIR)
-	@ echo ${COLOR}"LIBFT LIBRARY CREATED"${NC}
+	@ echo ${COLOR}"\nLIBFT LIBRARY CREATED"${NC}
 
 TEST :
 	@ $(CC) $(CFLAGS) $(MAIN)  -I $(INCLUDE_DIR) -o $(EXEC) library/$(NAME)

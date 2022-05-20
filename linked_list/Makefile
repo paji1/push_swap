@@ -9,7 +9,11 @@ INCLUDE_DIR = include
 
 SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(SRCS:.c=.o)
-INCLUDES = $(wildcard $(INCLUDE_DIR)/*)
+INCLUDES = src/ft_free.c src/ft_isin.c src/ft_lstadd_back_bonus.c \
+	src/ft_lstlast_bonus.c src/ft_lstnew_bonus.c src/ft_lstsize_bonus.c \
+	src/ft_pa.c src/ft_pb.c src/ft_pop.c src/ft_push.c src/ft_ra.c \
+	src/ft_rb.c src/ft_rra.c src/ft_rrb.c src/ft_rr.c src/ft_rrr.c \
+	src/ft_sa.c src/ft_sb.c src/ft_ss.c
 OBJ_DIR = $(addprefix obj/, $(notdir $(OBJS)))
 NAME = liblink.a
 MAIN = main.c
@@ -20,10 +24,9 @@ NC='\033[0m' # No Color
 RE= '\033[0;34m'
 # ###################################################
 all: $(NAME) 
-	
-	
 
 obj/%.o: src/%.c $(INCLUDES)
+	@ printf $(COLOR)"#"$(NC)
 	@ $(CC) $(CFLAGS) -I $(INCLUDE_DIR) -c $< -o obj/$(notdir $@)
 	
 WAITING : 
@@ -31,7 +34,7 @@ WAITING :
 
 $(NAME): WAITING $(OBJ_DIR) $(INCLUDES) 
 	@ $(AR) library/$(NAME) $(OBJ_DIR)
-	@ echo ${COLOR}"LINKED_LIST LIBRARY CREATED"${NC}
+	@ echo ${COLOR}"\nLINKED_LIST LIBRARY CREATED"${NC}
 
 TEST :
 	@ $(CC) $(CFLAGS) $(MAIN)  -I $(INCLUDE_DIR) -o $(EXEC) library/$(NAME)

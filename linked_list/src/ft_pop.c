@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_pop.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 05:43:21 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/04/17 12:22:00 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/20 19:15:12 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 t_list	*pop(t_list **lst)
 {
-	if(!*lst)
-		return NULL;
-	t_list * flst = *lst;
-	// flst->next = NULL;
+	t_list	*flst;
+
+	if (!*lst)
+		return (NULL);
+	flst = *lst;
 	*lst = (*lst)->next;
-	if((*lst))
+	if (*lst)
 		(*lst)->prev = flst->prev;
-	return flst;
+	return (flst);
 }

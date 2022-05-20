@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 11:40:18 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/04/17 08:21:51 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:18:11 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-
 
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
@@ -53,8 +52,7 @@ size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 int		countwords(const char *s, char c);
-int		ft_in_table(int *tab, int needle,int len);
+int		ft_in_table(int *tab, int needle, int len);
 int		ft_abs(int num);
-
 
 #endif

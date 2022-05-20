@@ -1,15 +1,59 @@
 CC        := cc
-CFLAGS    := 
-SRC = src/main.c src/parse.c  src/checker.c gnl/get_next_line.c gnl/get_next_line_utils.c src/print_stack.c \
-	src/max_min.c src/smart_rotate.c src/LIS.c src/pos.c src/back_to.c \
-	src/smart_rotate_pr.c src/sort_instruction.c src/loops.c
-B ?= 2 1 3 6 5 8
-LIBRARY = libft/library/libft.a linked_list/library/liblink.a 
+CFLAGS    := -g
 
-all: $(LIBRARY)
-	@ $(CC) $(CFLAGS) -g $(SRC)  $(LIBRARY)  -o push_swap
+# ####################PUSH_SWAP######################
+
+SRC = main.c parse.c  \
+	max_min.c smart_rotate.c LIS.c pos.c back_to.c \
+	smart_rotate_pr.c sort_instruction.c loops.c
+OBJS=$(addprefix obj/,$(SRC:.c=.o))
+
+# ################CHECKER############################
+
+SRC_CHECKER= checker.c  gnl/get_next_line.c \
+	gnl/get_next_line_utils.c   parse.c \
+	max_min.c pos.c back_to.c \
+	smart_rotate_pr.c sort_instruction.c loops.c
+OBJS_CH=$(addprefix obj/,$(SRC_CHECKER:.c=.o))
+
+# ################LIBRARY############################
+
+LIBRARY = libft/library/libft.a \
+	linked_list/library/liblink.a
+
+# ################COLOR##############################
+
+COLOR='\033[0;32m'
+NC='\033[0m'
+RE= '\033[0;34m'
+RED='\033[0;31m'
+
+# #######################BIN#########################
+
+PUSH_SWAP = push_swap
+CHECKER = checker
+
+# ###################################################
+all: $(PUSH_SWAP) $(CHECKER)
+
+$(PUSH_SWAP) : $(OBJS) 
+	@ $(CC) $(CFLAGS) $(OBJS)  $(LIBRARY)  -o $(PUSH_SWAP)
+
+
+
+bonus : $(CHECKER)
+
+$(CHECKER) : $(OBJS_CH) 
+	@ $(CC) $(CFLAGS) $(OBJS_CH) $(LIBRARY) -o $(CHECKER)
 	
+	
+obj/%.o: src/%.c $(LIBRARY)
+	@ $(CC) $(CFLAGS) -c $< -o $@
+	@ echo ${RE}"Making the $(notdir $@)"${NC}
 
+obj/gnl/%.o: gnl/%.c $(LIBRARY)
+	@ $(CC) $(CFLAGS) -c $< -o $@
+	@ echo ${RE}"Making the $(notdir $@)"${NC}
 
 $(LIBRARY) :
 	@ make -C libft
@@ -18,12 +62,15 @@ $(LIBRARY) :
 lik :
 	@ make -C linked_list
 
-clean:
+clean : 
+	@ rm -rf $(OBJS) 
+	@ rm -rf $(OBJS_CH) 
 	@ make clean -C libft/
 	@ make clean -C linked_list
-fclean :
+fclean : clean
+	@ rm -rf $(PUSH_SWAP)
+	@ rm -rf $(CHECKER)
 	@ make fclean -C libft
 	@ make fclean -C linked_list
-	@ rm -rf push_swap
 
 re : fclean all

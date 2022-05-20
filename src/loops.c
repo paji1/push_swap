@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 05:22:12 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/05/15 02:22:59 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:17:28 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,12 +105,15 @@ void	loop_back(int *tmp, int *best, t_list *stack_a, t_list *stack_b)
 
 int	parse_loop(t_inis i, t_list **lst)
 {
+	char	*s;
+
 	while (--i.j >= 0)
 	{
 		i.t = -1;
 		i.num = ft_atoi(i.s[i.j]);
-		if (ft_strcmp(ft_itoa(i.num), i.s[i.j]))
-			return (free_list(i.s, i.j), free(i.s), 1);
+		s = ft_itoa(i.num);
+		if (ft_strcmp(s, i.s[i.j]))
+			return (free(s), free_list(i.s, i.j), free(i.s), 1);
 		if (is_in(i.num))
 			return (free_list(i.s, i.j), free(i.s), 1);
 		while (i.s[i.j][++i.t])
@@ -118,6 +121,7 @@ int	parse_loop(t_inis i, t_list **lst)
 				return (free_list(i.s, i.j), free(i.s), 1);
 		push(lst, ft_lstnew(i.num));
 		free(i.s[i.j]);
+		free(s);
 	}
 	return (0);
 }

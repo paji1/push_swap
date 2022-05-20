@@ -6,7 +6,7 @@
 /*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 02:56:38 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/05/14 05:31:42 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/20 19:03:38 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 typedef struct s_list
 {
-	int 		size;
+	int				size;
 	int				content;
 	struct s_list	*next;
 	struct s_list	*prev;
@@ -35,10 +35,15 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	push(t_list **lst, t_list *new);
 t_list	*pop(t_list **lst);
 void	ft_sa(t_list **lst);
+void	ft_sa_rr(t_list **lst);
 void	ft_sb(t_list **lst);
+void	ft_sb_rr(t_list **lst);
 void	ft_ss(t_list **lsta, t_list **lstb);
+void	ft_ss_rr(t_list **lsta, t_list **lstb);
 void	ft_pa(t_list **lsta, t_list **lstb);
+void	ft_pa_rr(t_list **lsta, t_list **lstb);
 void	ft_pb(t_list **lsta, t_list **lstb);
+void	ft_pb_rr(t_list **lsta, t_list **lstb);
 void	ft_free(t_list **lst);
 void	ft_ra(t_list **lst);
 void	ft_ra_rr(t_list **lst);
@@ -49,6 +54,8 @@ void	ft_rra_rr(t_list **lst);
 void	ft_rrb(t_list **lst);
 void	ft_rrb_rr(t_list **lst);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
+void	ft_rrr_rr(t_list **stack_a, t_list **stack_b);
 void	ft_rr(t_list **stack_a, t_list **stack_b);
-int		ft_isin(t_list *lst,int content);
+void	ft_rr_rr(t_list **stack_a, t_list **stack_b);
+int		ft_isin(t_list *lst, int content);
 #endif

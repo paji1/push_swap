@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rra.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 00:15:32 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/02/16 14:59:29 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/20 19:20:05 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "linked_list.h"
 
-void ft_rra_rr(t_list **lst)
+void	ft_rra_rr(t_list **lst)
 {
-	t_list *last;
+	t_list	*last;
 
-	if(!(*lst) || !((*lst)->next))
+	if (!(*lst) || !((*lst)->next))
 		return ;
 	last = (*lst)->prev;
 	(*lst)->prev = (*lst)->prev->prev;
@@ -27,10 +27,10 @@ void ft_rra_rr(t_list **lst)
 	free(last);
 }
 
-void ft_rra(t_list **lst)
+void	ft_rra(t_list **lst)
 {
-	if(!(*lst) || !((*lst)->next))
+	if (!(*lst) || !((*lst)->next))
 		return ;
-	write(1,"rra\n",4);
+	write(1, "rra\n", 4);
 	ft_rra_rr(lst);
 }
