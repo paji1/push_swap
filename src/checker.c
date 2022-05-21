@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tel-mouh <tel-mouh@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: tel-mouh <tel-mouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 13:09:21 by tel-mouh          #+#    #+#             */
-/*   Updated: 2022/05/20 21:07:07 by tel-mouh         ###   ########.fr       */
+/*   Updated: 2022/05/21 10:47:48 by tel-mouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int	manipulte_stacks(t_list **stack_a, t_list **stack_b, char *s)
 		}
 		free(s);
 	}
+	return (0);
 }
 
 int	main(int ac, char **av)
